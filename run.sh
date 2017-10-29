@@ -96,6 +96,7 @@ if [ -n "$IBEACON_DELAY" ] && [ -n "$IBEACON_EVERY" ]; then
 	sed -i -e "s/{{IBEACON_DELAY}}/${IBEACON_DELAY}/g" $CONF
 	echo "IBEACON_EVERY: $IBEACON_EVERY"
 	sed -i -e "s/{{IBEACON_EVERY}}/${IBEACON_EVERY}/g" $CONF
+	sed -i -e "s/#IBEACON/IBEACON/g" $CONF
 fi
 
 
