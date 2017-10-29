@@ -58,6 +58,7 @@ configure_beacon () {
 	fi
 }
 
+
 # Users of this script can either provide LATITUDE & LONGITUDE, NMEA_GPS, or
 # GPSD_HOST in order to send position beacons
 if [ -n "$LATITUDE" ] && [ -n "$LONGITUDE" ]; then
@@ -88,6 +89,15 @@ elif [ -n "$GPSD_HOST" ]; then
 	fi
 	configure_beacon
 fi
+
+#user may specify specific timing for IBEACON (iGate Status).
+if [ -n "$IBEACON_DELAY" ] && [ -n "$IBEACON_EVERY" ]; then
+	echo "IBEACON_DELAY: $IBEACON_DELAY"
+	sed -i -e "s/{{IBEACON_DELAY}}/${IBEACON_DELAY}/g" $CONF
+	echo "IBEACON_EVERY: $IBEACON_EVERY"
+	sed -i -e "s/{{IBEACON_EVERY}}/${IBEACON_EVERY}/g" $CONF
+fi
+
 
 if [ -n "$IGFILTER" ]; then
 	echo "IGFILTER: $IGFILTER"
