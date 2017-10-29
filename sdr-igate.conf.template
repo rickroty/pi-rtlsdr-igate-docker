@@ -35,7 +35,7 @@ IGLOGIN {{MYCALL}} {{APRS_PASSWORD}}
 #GPSNMEA {{NMEA_GPS}}
 #TBEACON sendto=IG delay={{BEACON_DELAY}} every={{BEACON_EVERY}} symbol="{{BEACON_SYMBOL}}" overlay=R comment={{COMMENT}}
 
-#IBEACON sendto=IG delay={{BEACON_DELAY}} every={{BEACON_EVERY}} 
+#IBEACON sendto=IG delay={{IBEACON_DELAY}} every={{IBEACON_EVERY}} 
 
 # You might want to apply a filter for what packets will be obtained from the server.
 # Read about filters here:  http://www.aprs-is.net/javAPRSFilter.aspx
