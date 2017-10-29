@@ -60,7 +60,7 @@ configure_beacon () {
 
 # Users of this script can either provide LATITUDE & LONGITUDE, NMEA_GPS, or
 # GPSD_HOST in order to send position beacons
-if [[ -n "$LATITUDE" ]] && [[ -n "$LONGITUDE" ]]; then
+if [ -n "$LATITUDE" ] && [ -n "$LONGITUDE" ]; then
 	echo "PBEACON LATITUDE: $LATITUDE"
 	echo "PBEACON LONGITUDE: $LONGITUDE"
 	sed -i -e "s/{{LATITUDE}}/${LATITUDE}/g" $CONF
