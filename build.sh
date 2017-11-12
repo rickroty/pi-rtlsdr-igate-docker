@@ -1,1 +1,1 @@
-docker build -t igate:latest /
+docker build -t igate:latest ./
